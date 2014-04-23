@@ -87,4 +87,4 @@ end
 
 ## License
 
-include LICENSE.txt
+Licensed under the MIT license, see the separate [LICENSE.txt](https://raw.githubusercontent.com/sudosu/rails_admin_pundit/master/LICENSE.txt) file.
