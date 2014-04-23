@@ -68,7 +68,7 @@ class CityPolicy < ApplicationPolicy
   ......
   def rails_admin?(action)
     case action
-      when :delete, :update, :bulk_delete
+      when :destroy, :new
         false
       else
         super
