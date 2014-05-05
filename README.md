@@ -14,7 +14,25 @@ And then execute:
 
 ## Usage
 
-In your `app/policies/application_policy.rb` policy:
+1. First of all you need to configure Pundit (if you configured it already, skip this step).
+Include Pundit in your application controller:
+
+``` ruby
+class ApplicationController < ActionController::Base
+  include Pundit
+  protect_from_forgery
+end
+```
+
+Run the generator, which will set up an application policy:
+
+``` sh
+rails g pundit:install
+```
+
+For other configurations see Pundit's readme.
+
+2. In your `app/policies/application_policy.rb` policy you need to add rails_admin? method:
 
 ``` ruby
 class ApplicationPolicy
