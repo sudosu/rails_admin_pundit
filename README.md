@@ -69,7 +69,7 @@ And then execute:
     end
     ```
     
-    And add this lines to `config/initializers/rails_admin.rb` initializer:
+    Set pundit authorize method in `config/initializers/rails_admin.rb` initializer:
     
     ``` ruby
     RailsAdmin.config do |config|
