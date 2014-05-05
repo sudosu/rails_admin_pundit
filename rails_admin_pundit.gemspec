@@ -6,11 +6,14 @@ require 'rails_admin_pundit/version'
 Gem::Specification.new do |gem|
   gem.name          = "rails_admin_pundit"
   gem.version       = RailsAdminPundit::VERSION
+  gem.platform      = Gem::Platform::RUBY
   gem.authors       = ["Oleg Popadiuk"]
   gem.email         = ["superdodman@gmail.com"]
   gem.description   = %q{Pundit authorization system in Rails Admin}
   gem.summary       = %q{Rails Admin integration with Pundit authorization system}
   gem.homepage      = "https://github.com/sudosu/rails_admin_pundit"
+  
+  gem.add_dependency("pundit", ">= 0.2.3")
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
