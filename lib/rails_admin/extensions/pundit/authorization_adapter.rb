@@ -8,6 +8,7 @@ module RailsAdmin
         # See the +authorize_with+ config method for where the initialization happens.
         def initialize(controller)
           @controller = controller
+          @controller.class.send(:alias_method, :pundit_user, :_current_user)
         end
 
         # This method is called to find authorization policy
@@ -15,7 +16,7 @@ module RailsAdmin
           begin
             @controller.policy(record)
           rescue ::Pundit::NotDefinedError
-            ::ApplicationPolicy.new(@controller.current_user, record)
+            ::ApplicationPolicy.new(@controller.send(:_current_user), record)
           end
         end
         private :policy
@@ -46,9 +47,9 @@ module RailsAdmin
         # to those which the user can perform the given action on.
         def query(action, abstract_model)
           begin
-            @controller.policy_scope(abstract_model.model.scoped)
+            @controller.policy_scope(abstract_model.model.all)
           rescue ::Pundit::NotDefinedError
-            abstract_model.model.scoped
+            abstract_model.model.all
           end
         end
 
