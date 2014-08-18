@@ -3,7 +3,7 @@
 module PunditRailsAdminHelper
   extend ActiveSupport::Concern
 
-  def pundit_user
+  def current_user
     instance_eval(&RailsAdmin::Config.current_user_method)
   end
 end
