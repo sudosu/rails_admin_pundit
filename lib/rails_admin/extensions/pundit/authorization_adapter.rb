@@ -50,7 +50,7 @@ module RailsAdmin
           begin
             @controller.policy_scope(abstract_model.model)
           rescue ::Pundit::NotDefinedError
-            abstract_model.model
+            abstract_model.model.all
           end
         end
 
