@@ -2,11 +2,15 @@
 
 [RailsAdmin](https://github.com/sferik/rails_admin) integration with [Pundit](https://github.com/elabs/pundit) authorization system
 
+## Note
+
+This is a fork of [Sudosu's gem](https://github.com/sudosu/rails_admin_pundit), which does not include support for Pundit's method ```after_action verify_authorized``` method. This resulted in automatic Pundit::AuthorizationNotPerformedError with Rails Admin. This fork fixes the issue
+
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
+    gem "rails_admin_pundit", :github => "Samy-Amar/rails_admin_pundit"
 
 And then execute:
 
