@@ -10,7 +10,7 @@ This is a fork of [Sudosu's gem](https://github.com/sudosu/rails_admin_pundit), 
 
 Add this line to your application's Gemfile:
 
-    gem "rails_admin_pundit", :github => "Samy-Amar/rails_admin_pundit"
+    gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 
 And then execute:
 
